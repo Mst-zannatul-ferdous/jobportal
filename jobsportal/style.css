@@ -1,0 +1,610 @@
+/* Clean, consolidated stylesheet for Jobs Here */
+
+/* Base */
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  color: #222;
+}
+
+/* Top header / layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: 84px 1fr 300px;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(
+    90deg,
+    rgba(34, 34, 34, 0.96),
+    rgba(45, 45, 45, 0.96)
+  );
+  padding: 10px 22px;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header img {
+  height: 64px;
+  width: 64px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+.job {
+  color: #ffffff;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 38px;
+  margin: 0;
+  padding-left: 6px;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.45);
+}
+
+.jobb {
+  color: #fff;
+  font-size: 28px;
+  margin: 0;
+}
+
+.fwhite {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+/* Prevent any child in the header action area from wrapping or flexing unexpectedly */
+.fwhite > * {
+  flex: 0 0 auto;
+  min-width: 0;
+}
+
+@media (max-width: 800px) {
+  .grid-container {
+    grid-template-columns: 64px 1fr;
+    grid-auto-rows: auto;
+    padding: 10px;
+  }
+  .fwhite {
+    grid-column: 1 / -1;
+    justify-content: center;
+    margin-top: 8px;
+  }
+  .job {
+    font-size: 28px;
+    text-align: center;
+  }
+}
+
+/* Buttons */
+.button {
+  background-color: #ff6600;
+  border: none;
+  color: #fff;
+  padding: 9px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.14);
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button1 {
+  background-color: #66b3ff;
+  color: #05243a;
+}
+.button2 {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.16);
+}
+.button2:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+/* Sections and grids */
+.grid-container3 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0px;
+  background-color: white;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.grid-container3 > div {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-family: "Calibri", Light;
+}
+
+.grid-foot {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0px;
+  background-color: rgb(0, 0, 0, 1);
+  padding-left: 10%;
+  padding-right: 10%;
+  color: white;
+  height: 250px;
+  padding-top: 50px;
+}
+.grid-foot > div {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  font-family: "Calibri", Light;
+}
+
+/* Footer (semantic) */
+.site-footer {
+  background: #000;
+  color: #e9eef2;
+  padding: 48px 0;
+}
+.site-footer__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+.site-footer__col h3 {
+  margin: 0 0 12px 0;
+  color: #fff;
+  font-size: 18px;
+}
+.site-footer__col p,
+.site-footer__col li,
+.site-footer__col a {
+  color: #d6e0e6;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.site-footer__col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.site-footer__col ul li {
+  margin-bottom: 8px;
+}
+.site-footer__about p {
+  margin-bottom: 10px;
+}
+.site-footer__col a {
+  color: #9fd1ff;
+  text-decoration: none;
+}
+.site-footer__col a:hover {
+  text-decoration: underline;
+}
+.site-footer .copyright {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #9aa8b1;
+}
+
+@media (max-width: 900px) {
+  .site-footer__inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-foot {
+    grid-template-columns: repeat(2, 1fr);
+    height: auto;
+    padding-top: 36px;
+  }
+}
+@media (max-width: 480px) {
+  .site-footer__inner {
+    grid-template-columns: 1fr;
+  }
+  .grid-foot {
+    grid-template-columns: 1fr;
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+}
+
+/* Hero */
+.addimage {
+  background-image: url("images/bg2.jpg");
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.addimage2 {
+  background-image: url("images/bg4.jpg");
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.bg-img {
+  background-image: url("bg6.jpg");
+  min-height: 900px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.addtext {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.heading {
+  text-align: center;
+  font-size: 2em;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.border {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+/* Generic button class used in forms */
+.butt {
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+.butt:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+.container {
+  padding: 16px;
+}
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 60px;
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto;
+  border: 1px solid #888;
+  width: 80%;
+}
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Header dropdown/button fixes */
+.w3-dropdown-hover {
+  position: relative;
+}
+.w3-dropdown-hover > .w3-dropdown-content {
+  min-width: 200px;
+  left: 0;
+  top: calc(100% + 0px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+  border-radius: 6px;
+  padding: 10px 0;
+}
+
+.w3-dropdown-hover .w3-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+  min-width: 0;
+}
+
+/* Ensure W3 dropdowns using your .button class also inherit no-wrap inline-flex */
+.w3-dropdown-hover .button,
+.w3-dropdown-hover > button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+/* Make sure header buttons inside the main grid won't expand and cause wrapping */
+.grid-container .w3-button,
+.grid-container .button {
+  min-width: 0;
+  flex: 0 0 auto;
+}
+
+/* Prevent the button from shifting on hover (we use transform instead) */
+.w3-dropdown-hover .w3-button:hover {
+  transform: translateY(-2px);
+}
+
+/* Align badges inside header buttons */
+.w3-badge {
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+/* Ensure the dropdown items have comfortable spacing */
+.w3-dropdown-content .w3-bar-item {
+  padding: 12px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Keep dropdown items on a single line and avoid wrapping inside */
+.w3-dropdown-content .w3-bar-item {
+  white-space: nowrap;
+  gap: 12px;
+  flex-wrap: nowrap;
+}
+
+/* Normalize red badges when used in header and dropdowns */
+.grid-container .w3-badge,
+.grid-container .w3-dropdown-content .w3-badge,
+.fwhite .w3-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  padding: 0 8px;
+  background: #ee5b4b; /* red tone */
+  color: #fff;
+  border-radius: 999px;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  font-size: 13px;
+  line-height: 1;
+  flex: 0 0 auto;
+}
+
+/* Slightly smaller badge inside dropdown list items */
+.w3-dropdown-content .w3-badge {
+  min-width: 26px;
+  height: 26px;
+  font-size: 12px;
+}
+
+/* Features / skills cards */
+.features {
+  padding: 40px 0;
+  text-align: center;
+}
+.features .heading {
+  margin: 6px 0 18px;
+  font-size: 22px;
+  color: #1b2b3a;
+}
+.features__grid {
+  gap: 28px;
+  padding-left: 10%;
+  padding-right: 10%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.feature-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 28px 18px;
+  box-shadow: 0 8px 20px rgba(15, 40, 60, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 36px rgba(15, 40, 60, 0.12);
+}
+.feature-card__img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+.feature-card__title {
+  margin: 0;
+  font-size: 18px;
+  color: #10232b;
+}
+
+@media (max-width: 900px) {
+  .features__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 540px) {
+  .features__grid {
+    grid-template-columns: 1fr;
+  }
+  .feature-card {
+    padding: 20px;
+  }
+  .feature-card__img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* Scoped modal styles for the login modal with id #modal1
+   These are namespaced to avoid conflicting with existing global .modal rules. */
+#modal1.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.55);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+}
+
+#modal1.modal[aria-hidden="false"] {
+  display: block;
+}
+
+#modal1 .modal-content {
+  background-color: #fff;
+  margin: 6% auto;
+  border-radius: 10px;
+  padding: 0;
+  width: 92%;
+  max-width: 420px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+#modal1 .modal-header {
+  background: linear-gradient(90deg, #2b8cff, #4dd2ff);
+  padding: 18px 20px;
+  color: #fff;
+  position: relative;
+}
+
+#modal1 .modal-header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+#modal1 .close {
+  position: absolute;
+  right: 14px;
+  top: 8px;
+  color: #fff;
+  font-size: 28px;
+  font-weight: 700;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+#modal1 .container {
+  padding: 18px;
+}
+
+#modal1 .container label {
+  display: block;
+  margin: 10px 0 6px;
+  font-weight: 600;
+  color: #333;
+}
+
+#modal1 .w3-input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border: 1px solid #e6e6e6;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+#modal1 .btn-submit {
+  background: #2b8cff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  width: 100%;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#modal1 .btn-submit:hover {
+  background: #1972d6;
+}
+
+#modal1 .radio-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin: 8px 0;
+  flex-wrap: wrap;
+}
+
+#modal1 .radio-row label {
+  font-weight: 500;
+}
+
+@media (min-width: 600px) {
+  #modal1 .modal-content {
+    margin: 4% auto;
+  }
+}
